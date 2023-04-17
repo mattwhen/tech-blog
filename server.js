@@ -4,6 +4,8 @@ const session = require("express-session");
 const expressHandleBars = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/auth");
+const userRoutes = require("./controllers/api/userRoutes");
+const homeRoutes = require('./controllers/homeRoutes');
 
 const sequelize = require("./config/connection");
 // Initializes Sequelize with session store
@@ -44,11 +46,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(routes);
+app.use('/api/users', userRoutes);
+app.use('/', homeRoutes);
 
 sequelize.sync({ force: false }).then(() => {
   // If force: true, this is similar to the SQL query, DROP TABLE IF EXISTS
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () => console.log("Now listening on: " + "http://localhost:3001"));
 });
 
-module.exports = {};
+
