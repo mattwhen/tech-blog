@@ -4,8 +4,10 @@ const session = require("express-session");
 const expressHandleBars = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/auth");
+// Require routes below:
 const userRoutes = require("./controllers/api/userRoutes");
 const homeRoutes = require('./controllers/homeRoutes');
+const postRoutes = require('./controllers/api/postRoutes');
 
 const sequelize = require("./config/connection");
 // Initializes Sequelize with session store
@@ -47,6 +49,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
 app.use('/', homeRoutes);
 
 sequelize.sync({ force: false }).then(() => {

@@ -1,8 +1,8 @@
-const userRoutes = require('express').Router();
+const router = require('express').Router();
 const {User} = require('../../models');
 
 
-userRoutes.route('/create').post( async (req, res) => {
+router.route('/create').post( async (req, res) => {
     // console.log(req.body);
     try {
         const newUser = await User.create(req.body)
@@ -14,7 +14,7 @@ userRoutes.route('/create').post( async (req, res) => {
     }
 });
 
-userRoutes.route('/').get( async (req, res) => {
+router.route('/').get( async (req, res) => {
     console.log(req);
     try {
         const users = await User.findAll({});
@@ -27,4 +27,4 @@ userRoutes.route('/').get( async (req, res) => {
     }
 });
 
-module.exports = userRoutes;
+module.exports = router;
