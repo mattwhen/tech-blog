@@ -1,30 +1,22 @@
 <section class="column is-one-third container">
 <h2 class="title has-text-centered">Sign In</h2>
-<h1 class="has-text-centered">To view what's going on in the tech world!</h1><hr>
-<form class="login-form">
-  {{!-- Email Field --}}
-  <div class="field">
-    <label for="email-login">Email:</label>
-    <p class="control has-icons-left has-icons-right">
-     <input class="input is-rounded" type="email" id="email-login">
-     <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-     </span>
-     </span>
-    </p>
-  {{!-- Password Field --}}
-  <div class="field">
-     <label for="password-login">Password:</label>
-    <p class="control has-icons-left">
-    <input class="input is-rounded" type="password" id="password-login">
-    <span class="icon is-small is-left">
-      <i class="fas fa-lock"></i>
-    </span>
-    </p>
+<h1 class="has-text-centered">See what's going on in the tech world!</h1><hr>
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
-    <button type="submit" class="button is-primary is-fullwidth is-rounded">Sign In</button>
-    <p class="pb-1 pt-4 has-text-centered">Don't have an account, Create new account:</p>
-    <a href="/sign-up"><button type="button" class="button is-danger is-fullwidth is-rounded">Sign Up</button></a>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  </div>
+  <div class="d-grid gap-2"> 
+  <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+  <button type="submit" class="btn btn-primary btn-lg">Login</button>
   </div>
 </form>
 </section>
