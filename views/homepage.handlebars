@@ -1,7 +1,11 @@
 {{#each posts as |post| }}
 
-{{!-- partial for the post-info that will place all the content in the partial here --}}
-{{> post-info post }}
+<a href="/posts/{{post.id}}">{{post.post_title}}</a>
+
+<div>
+    <p>
+        {{post.content}}
+    </p>
 </div>
 
 {{else}}
