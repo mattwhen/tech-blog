@@ -32,7 +32,7 @@ npm install
 
 
 ## Challenges
-One of the challenges I came across was 
+One of the challenges I came across was the login functionality and authentication. Another was how to create the associations between each of the models. 
 
 ## Future features
 One feature I would add is adding functionality to reply individually to a user's comment. Another is adding 'like' and 'dislike' buttons to user's comments/posts. Finally, is adding notifications for a user whenever someone likes/dislikes their posts or if someone mentions them in a comment of some sort. 
